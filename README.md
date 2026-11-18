@@ -1,30 +1,20 @@
 # Wallpapers
 
-A small, curated collection of atmospheric science-fiction and industrial-noir desktop wallpapers.
+A desktop wallpaper collection, organised by theme. Every image is committed here, so the repo works as a Git/Nix input without fetching anything.
 
-Everything listed below is committed under `wallpapers/`, so the images are available when the repo is consumed as a Git/Nix input. Sources and rights for third-party works are recorded in the tables, not in a separate index file.
+## Layout
 
-## Included images
+| Folder | Files | Contents |
+| --- | --- | --- |
+| `sci-fi/` | 21 | Atmospheric, cosmic and industrial-noir artwork, including the originally curated set |
+| `illustration/` | 19 | Painted and cartoon scenes, anime frames, character art |
+| `photography/` | 14 | Unsplash photography, landscapes, city and nature shots |
+| `minimal/` | 16 | Flat vector and single-subject pieces |
+| `retro/` | 8 | Game, terminal and FOSS theme art, gruvbox variants |
+| `collections/doctor-who/` | 11 | Doctor Who set |
+| `collections/stalenhag/` | 59 | Simon Stålenhag set, all 3440 × 1440 |
 
-| File | Creator | Source | Rights | Size |
-| --- | --- | --- | --- | --- |
-| [`violet-monolith.png`](wallpapers/violet-monolith.png) | Generated for this collection | Original | Original, generated | 1672 × 941 |
-| [`rainy-megacity.png`](wallpapers/rainy-megacity.png) | Generated for this collection | Original | Original, generated | 1672 × 941 |
-| [`dystopian-dreams.png`](wallpapers/dystopian-dreams.png) | robokoboto | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1384548) | Personal use only | 4072 × 2280 |
-| [`shattered-space.jpg`](wallpapers/shattered-space.jpg) | Bethesda Game Studios | [Official wallpaper](https://bethesda.net/en/game/starfield/media/wallpaper/starfield-shattered-space-wallpaper) | Publisher copyright | 5654 × 2763 |
-| [`derelict-orbital-citadel.jpg`](wallpapers/derelict-orbital-citadel.jpg) | Paul Chadeisson | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1269192) | Personal use only | 3840 × 1632 |
-| [`celestial-megaship.jpg`](wallpapers/celestial-megaship.jpg) | AI-generated / publisher Fred | [backiee](https://backiee.com/wallpaper/celestial-megaship-amidst-galactic-fog/302530) | Unverified | 1920 × 1080 |
-| [`sci-fi-city.jpg`](wallpapers/sci-fi-city.jpg) | Annibale Siconolfi | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1108470) | Personal use only | 1920 × 1200 |
-| [`futuristic-sci-fi-cityscape.jpg`](wallpapers/futuristic-sci-fi-cityscape.jpg) | Annibale Siconolfi | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1223603) | Personal use only | 5120 × 3200 |
-| [`futuristic-space-colony.jpg`](wallpapers/futuristic-space-colony.jpg) | Paul Chadeisson | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=928392) | Personal use only | 1920 × 1102 |
-| [`planet-among-stars.jpg`](wallpapers/planet-among-stars.jpg) | Unverified | [HDQ Walls](https://hdqwalls.com/planet-science-fiction-among-stars-4k-wallpaper) | Unverified | 3840 × 2160 |
-| [`cosmic-pyramids.jpg`](wallpapers/cosmic-pyramids.jpg) | Unverified | [HDQ Walls](https://images.hdqwalls.com/download/cosmic-pyramids-ancient-future-yf-3840x2160.jpg) | Unverified | 3840 × 2160 |
-| [`remember-me-slum-neoparis.jpg`](wallpapers/remember-me-slum-neoparis.jpg) | Paul Chadeisson | [ArtStation](https://www.artstation.com/artwork/zmx6) | Artist copyright | 1600 × 943 |
-| [`museum-alien-life.jpg`](wallpapers/museum-alien-life.jpg) | Creator unverified | [Behance](https://www.behance.net/gallery/106183577/The-Museum-of-Alien-Life) | Unverified | 2800 × 1575 |
-
-The two generated images are original concepts, not native 4K artwork. Bundled third-party files are kept at the largest resolution the source served, unmodified. Some sit below the source's advertised size: ArtStation only exposes 1600 px for the Remember Me piece, and backiee only serves 1920 × 1080. The Behance entry is a multi-image project; the bundled file is its cover image.
-
-★ Initial favorites were Dystopian Dreams and Starfield: Shattered Space. The star is a preference, not a licensing designation.
+Resolutions are whatever the source provided, so they range from 1600 px wide up to 7680 px. Files are unmodified originals; no crops or re-encodes.
 
 ## Use as a Nix flake input
 
@@ -40,13 +30,221 @@ flake-file.inputs.wallpapers = {
 The repo itself does **not** need a `flake.nix`. In the existing `stylix` `let` block, replace the current external `pkgs.fetchurl` image expression with:
 
 ```nix
-inputImage = "${inputs.wallpapers}/wallpapers/violet-monolith.png";
+inputImage = "${inputs.wallpapers}/wallpapers/sci-fi/violet-monolith.png";
 ```
 
-Any file in the table above works the same way. Keep the existing `pkgs.runCommand` dimming pipeline and `stylix.image = wallpaper` configuration unchanged. Since the Nix repo uses `flake-file`, regenerate its `flake.nix` using the existing `write-flake` workflow, then update the lock file.
+Any file works the same way. Keep the existing `pkgs.runCommand` dimming pipeline and `stylix.image = wallpaper` configuration unchanged. Since the Nix repo uses `flake-file`, regenerate its `flake.nix` using the existing `write-flake` workflow, then update the lock file.
 
-## Copyright and attribution
+## Rights and provenance
 
-The two generated images carry no license yet. Every other file is third-party artwork redistributed here without permission: Wallpaper Abyss labels several works "Free For Private, Personal Use," which is not a grant to republish them, Bethesda's wallpaper is publisher copyright, and several creators are unverified. Attribution and source links are preserved above. ArtStation and Behance were fetched through a real browser session; that changed nothing about the rights.
+Two images were generated for this collection and carry no license yet: `sci-fi/violet-monolith.png` and `sci-fi/rainy-megacity.png`.
 
-Treat this repository as private until each work's terms are cleared or the files are replaced with original art. There is no blanket license for the collection.
+Eleven files in `sci-fi/` were downloaded from wallpaper sites and are third-party artwork redistributed here without permission. Wallpaper Abyss labels several "Free For Private, Personal Use," which is not a grant to republish; Bethesda's Starfield art is publisher copyright; two more are unverified. Their sources:
+
+| File | Creator | Source |
+| --- | --- | --- |
+| `sci-fi/dystopian-dreams.png` | robokoboto | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1384548) |
+| `sci-fi/shattered-space.jpg` | Bethesda Game Studios | [Official wallpaper](https://bethesda.net/en/game/starfield/media/wallpaper/starfield-shattered-space-wallpaper) |
+| `sci-fi/derelict-orbital-citadel.jpg` | Paul Chadeisson | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1269192) |
+| `sci-fi/celestial-megaship.jpg` | AI-generated / publisher Fred | [backiee](https://backiee.com/wallpaper/celestial-megaship-amidst-galactic-fog/302530) |
+| `sci-fi/sci-fi-city.jpg` | Annibale Siconolfi | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1108470) |
+| `sci-fi/futuristic-sci-fi-cityscape.jpg` | Annibale Siconolfi | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1223603) |
+| `sci-fi/futuristic-space-colony.jpg` | Paul Chadeisson | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=928392) |
+| `sci-fi/planet-among-stars.jpg` | Unverified | [HDQ Walls](https://hdqwalls.com/planet-science-fiction-among-stars-4k-wallpaper) |
+| `sci-fi/cosmic-pyramids.jpg` | Unverified | [HDQ Walls](https://images.hdqwalls.com/download/cosmic-pyramids-ancient-future-yf-3840x2160.jpg) |
+| `sci-fi/remember-me-slum-neoparis.jpg` | Paul Chadeisson | [ArtStation](https://www.artstation.com/artwork/zmx6) |
+| `sci-fi/museum-alien-life.jpg` | Creator unverified | [Behance](https://www.behance.net/gallery/106183577/The-Museum-of-Alien-Life) |
+
+The rest were collected locally with no recorded source. Where a filename carries a photographer name and number, the work came from Unsplash and falls under the Unsplash license. Everything else — including the Doctor Who and Simon Stålenhag sets, and the anime, game and cartoon pieces — is copyrighted work with no license granted.
+
+Treat this repository as private until the rights are cleared or the files are replaced with original art. There is no blanket license for the collection.
+
+<details>
+<summary><b>sci-fi/</b> — 21 files</summary>
+
+- `902435.jpg`
+- `alien.png`
+- `celestial-megaship.jpg`
+- `cosmic-pyramids.jpg`
+- `cosmos.png`
+- `derelict-orbital-citadel.jpg`
+- `dystopian-dreams.png`
+- `escape-velocity.jpg`
+- `fsociety.jpg`
+- `futuristic-sci-fi-cityscape.jpg`
+- `futuristic-space-colony.jpg`
+- `mountains-on-mars.png`
+- `museum-alien-life.jpg`
+- `noir.png`
+- `planet-among-stars.jpg`
+- `rainy-megacity.png`
+- `remember-me-slum-neoparis.jpg`
+- `sci-fi-city.jpg`
+- `shattered-space.jpg`
+- `valley.png`
+- `violet-monolith.png`
+
+</details>
+
+<details>
+<summary><b>illustration/</b> — 19 files</summary>
+
+- `calvin.png`
+- `car.png`
+- `cat.png`
+- `cloud-storage.png`
+- `coffee-pixels.png`
+- `coffee.png`
+- `dragon-ball-simple.png`
+- `ghost.png`
+- `heart-points.png`
+- `maru-pink.png`
+- `nordish.png`
+- `pixar-lamp.png`
+- `polaroids.jpg`
+- `samurai.png`
+- `shack.png`
+- `street.png`
+- `studio.png`
+- `totoro.png`
+- `war.png`
+
+</details>
+
+<details>
+<summary><b>photography/</b> — 14 files</summary>
+
+- `alistair-mackenzie-779903-unsplash.jpg`
+- `aperture-vintage-318404-unsplash.jpg`
+- `autumn.png`
+- `evening-sky.png`
+- `forest.png`
+- `highway.jpg`
+- `jakob-dalbjorn-249730-unsplash.jpg`
+- `john-fowler-1072143-unsplash.jpg`
+- `jr-korpa-529187-unsplash.jpg`
+- `lucas-davies-507237-unsplash.jpg`
+- `mountain.png`
+- `nature.png`
+- `pink-flower.jpg`
+- `record.png`
+
+</details>
+
+<details>
+<summary><b>minimal/</b> — 16 files</summary>
+
+- `abduction.png`
+- `autumn-is-near.png`
+- `dots.png`
+- `lighty.png`
+- `modern-labyrinth.png`
+- `music.png`
+- `need-a-long-block.png`
+- `needs-charging.png`
+- `paradox.png`
+- `passwrd.png`
+- `pipe.png`
+- `recharge.png`
+- `solar.png`
+- `storage.png`
+- `sun-rising.png`
+- `taken-sheep.png`
+
+</details>
+
+<details>
+<summary><b>retro/</b> — 8 files</summary>
+
+- `gnu-bg2.png`
+- `gruvbox-dark-blue.png`
+- `gruvbox-dark-rainbow.png`
+- `linux-retro.jpg`
+- `mario-fail.jpg`
+- `pacman-grid.png`
+- `pong.png`
+- `snake.png`
+
+</details>
+
+<details>
+<summary><b>collections/doctor-who/</b> — 11 files</summary>
+
+- `alldoctors.jpg`
+- `dalek.jpg`
+- `tardis2.jpg`
+- `tardisblack.jpg`
+- `tardis.jpg`
+- `tardis.png`
+- `tardisstars.jpg`
+- `tenth.jpg`
+- `the-police-box-1.png`
+- `travelsintime.png`
+- `trustme.jpg`
+
+</details>
+
+<details>
+<summary><b>collections/stalenhag/</b> — 59 files</summary>
+
+- `stalenhag-01.jpg`
+- `stalenhag-02.jpg`
+- `stalenhag-03.jpg`
+- `stalenhag-04.jpg`
+- `stalenhag-05.jpg`
+- `stalenhag-06.jpg`
+- `stalenhag-07.jpg`
+- `stalenhag-08.jpg`
+- `stalenhag-09.jpg`
+- `stalenhag-10.jpg`
+- `stalenhag-11.jpg`
+- `stalenhag-12.jpg`
+- `stalenhag-13.jpg`
+- `stalenhag-14.jpg`
+- `stalenhag-15.jpg`
+- `stalenhag-16.jpg`
+- `stalenhag-17.jpg`
+- `stalenhag-18.jpg`
+- `stalenhag-19.jpg`
+- `stalenhag-20.jpg`
+- `stalenhag-21.jpg`
+- `stalenhag-22.jpg`
+- `stalenhag-23.jpg`
+- `stalenhag-24.jpg`
+- `stalenhag-25.jpg`
+- `stalenhag-26.jpg`
+- `stalenhag-27.jpg`
+- `stalenhag-28.jpg`
+- `stalenhag-29.jpg`
+- `stalenhag-30.jpg`
+- `stalenhag-31.jpg`
+- `stalenhag-32.jpg`
+- `stalenhag-33.jpg`
+- `stalenhag-34.jpg`
+- `stalenhag-35.jpg`
+- `stalenhag-36.jpg`
+- `stalenhag-37.jpg`
+- `stalenhag-38.jpg`
+- `stalenhag-39.jpg`
+- `stalenhag-40.jpg`
+- `stalenhag-41.jpg`
+- `stalenhag-42.jpg`
+- `stalenhag-43.jpg`
+- `stalenhag-44.jpg`
+- `stalenhag-45.jpg`
+- `stalenhag-46.jpg`
+- `stalenhag-47.jpg`
+- `stalenhag-48.jpg`
+- `stalenhag-49.jpg`
+- `stalenhag-50.jpg`
+- `stalenhag-51.jpg`
+- `stalenhag-52.jpg`
+- `stalenhag-53.jpg`
+- `stalenhag-54.jpg`
+- `stalenhag-55.jpg`
+- `stalenhag-56.jpg`
+- `stalenhag-57.jpg`
+- `stalenhag-58.jpg`
+- `stalenhag-59.jpg`
+
+</details>
