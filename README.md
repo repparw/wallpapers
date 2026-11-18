@@ -5,7 +5,7 @@ A small, curated collection of atmospheric science-fiction and industrial-noir d
 The collection keeps **files** and **references** separate:
 
 - `wallpapers/`: Original images generated for this collection. These files are available when consumed as a Git/Nix input.
-- `catalog.json`: Artwork index with sources, artist credits, categories, and usage notes. Externally hosted images are **not** mirrored or committed.
+- This README: The index of linked artwork, with sources, artist credits, and usage notes. Externally hosted images are **not** mirrored or committed.
 
 ## Included images
 
@@ -18,21 +18,21 @@ Both images are 1672 × 941, generated as original concepts in this conversation
 
 ## External favorites
 
-The `catalog.json` index includes the original favorites and further recommendations. The collection is intentionally a set of links for these works, not a rehosting project.
+The collection is intentionally a set of links for these works, not a rehosting project.
 
-| Wallpaper | Creator / source | Download or portfolio |
-| --- | --- | --- |
-| Dystopian Dreams ★ | robokoboto | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1384548) |
-| Starfield: Shattered Space ★ | Bethesda Game Studios | [Official wallpaper](https://bethesda.net/en/game/starfield/media/wallpaper/starfield-shattered-space-wallpaper) |
-| Derelict Orbital Citadel | Paul Chadeisson | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1269192) |
-| Celestial Megaship | AI-generated / publisher Fred | [backiee](https://backiee.com/wallpaper/celestial-megaship-amidst-galactic-fog/302530) |
-| Sci Fi City | Annibale Siconolfi | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1108470) |
-| Futuristic Sci-Fi Cityscape | Annibale Siconolfi | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1223603) |
-| Futuristic Space Colony | Paul Chadeisson | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=928392) |
-| Planet Science Fiction Among Stars | Unverified | [HDQ Walls](https://hdqwalls.com/planet-science-fiction-among-stars-4k-wallpaper) |
-| Cosmic Pyramids: Ancient Future | Unverified | [HDQ Walls image](https://images.hdqwalls.com/download/cosmic-pyramids-ancient-future-yf-3840x2160.jpg) |
-| Remember Me: Slum Neo-Paris | Paul Chadeisson | [ArtStation](https://www.artstation.com/artwork/zmx6) |
-| The Museum of Alien Life | Creator unverified | [Behance](https://www.behance.net/gallery/106183577/The-Museum-of-Alien-Life) |
+| Wallpaper | Creator / source | Rights | Download or portfolio |
+| --- | --- | --- | --- |
+| Dystopian Dreams ★ | robokoboto | Personal use only | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1384548) |
+| Starfield: Shattered Space ★ | Bethesda Game Studios | Publisher copyright | [Official wallpaper](https://bethesda.net/en/game/starfield/media/wallpaper/starfield-shattered-space-wallpaper) |
+| Derelict Orbital Citadel | Paul Chadeisson | Personal use only | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1269192) |
+| Celestial Megaship | AI-generated / publisher Fred | Unverified | [backiee](https://backiee.com/wallpaper/celestial-megaship-amidst-galactic-fog/302530) |
+| Sci Fi City | Annibale Siconolfi | Personal use only | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1108470) |
+| Futuristic Sci-Fi Cityscape | Annibale Siconolfi | Personal use only | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=1223603) |
+| Futuristic Space Colony | Paul Chadeisson | Personal use only | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=928392) |
+| Planet Science Fiction Among Stars | Unverified | Unverified | [HDQ Walls](https://hdqwalls.com/planet-science-fiction-among-stars-4k-wallpaper) |
+| Cosmic Pyramids: Ancient Future | Unverified | Unverified | [HDQ Walls image](https://images.hdqwalls.com/download/cosmic-pyramids-ancient-future-yf-3840x2160.jpg) |
+| Remember Me: Slum Neo-Paris | Paul Chadeisson | Artist copyright | [ArtStation](https://www.artstation.com/artwork/zmx6) |
+| The Museum of Alien Life | Creator unverified | Unverified | [Behance](https://www.behance.net/gallery/106183577/The-Museum-of-Alien-Life) |
 
 ★ means an initial favorite, not a licensing designation.
 
@@ -55,14 +55,10 @@ inputImage = "${inputs.wallpapers}/wallpapers/violet-monolith.png";
 
 Or select `wallpapers/rainy-megacity.png`. Keep the existing `pkgs.runCommand` dimming pipeline and `stylix.image = wallpaper` configuration unchanged. Since the Nix repo uses `flake-file`, regenerate its `flake.nix` using the existing `write-flake` workflow, then update the lock file.
 
-**Important:** The external references in `catalog.json` are not bundled into this input. To use one of them, download it for your own use and either keep it locally or reference it in `pkgs.fetchurl` with its fixed hash, subject to the source's terms. Do not assume its presence under `inputs.wallpapers`.
-
-## Catalog format
-
-The machine-readable catalog is [`catalog.json`](catalog.json). Each entry has an `id`, `title`, `category`, `kind`, `rights` and tags. Local entries carry a repo-relative `path` and `sha256`; external entries carry a `source` URL, and do not carry a local path. Run `python3 scripts/validate.py` to check paths, hashes, and the schema locally.
+**Important:** The externally hosted works listed above are not bundled into this input. To use one of them, download it for your own use and either keep it locally or reference it in `pkgs.fetchurl` with its fixed hash, subject to the source's terms. Do not assume its presence under `inputs.wallpapers`.
 
 ## Copyright and attribution
 
-Original generated images are included here. **No third-party images are stored in this repository.** Linked artwork remains subject to each creator's and distributor's terms. Wallpaper Abyss labels several linked works "Free For Private, Personal Use," which is not a grant to republish those works in a public Git repository. Sources and attribution are preserved in the catalog.
+Original generated images are included here. **No third-party images are stored in this repository.** Linked artwork remains subject to each creator's and distributor's terms. Wallpaper Abyss labels several linked works "Free For Private, Personal Use," which is not a grant to republish those works in a public Git repository. Sources and attribution are preserved in the table above.
 
-There is no blanket license for the included images or catalog. Decide on licensing explicitly before accepting contributions or redistributing the collection.
+There is no blanket license for the included images. Decide on licensing explicitly before accepting contributions or redistributing the collection.
