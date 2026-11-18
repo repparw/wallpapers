@@ -19,19 +19,12 @@ Everything listed below is committed under `wallpapers/`, so the images are avai
 | [`futuristic-space-colony.jpg`](wallpapers/futuristic-space-colony.jpg) | Paul Chadeisson | [Wallpaper Abyss](https://wall.alphacoders.com/big.php?i=928392) | Personal use only | 1920 × 1102 |
 | [`planet-among-stars.jpg`](wallpapers/planet-among-stars.jpg) | Unverified | [HDQ Walls](https://hdqwalls.com/planet-science-fiction-among-stars-4k-wallpaper) | Unverified | 3840 × 2160 |
 | [`cosmic-pyramids.jpg`](wallpapers/cosmic-pyramids.jpg) | Unverified | [HDQ Walls](https://images.hdqwalls.com/download/cosmic-pyramids-ancient-future-yf-3840x2160.jpg) | Unverified | 3840 × 2160 |
+| [`remember-me-slum-neoparis.jpg`](wallpapers/remember-me-slum-neoparis.jpg) | Paul Chadeisson | [ArtStation](https://www.artstation.com/artwork/zmx6) | Artist copyright | 1600 × 943 |
+| [`museum-alien-life.jpg`](wallpapers/museum-alien-life.jpg) | Creator unverified | [Behance](https://www.behance.net/gallery/106183577/The-Museum-of-Alien-Life) | Unverified | 2800 × 1575 |
 
-The two generated images are original concepts, not native 4K artwork. Bundled third-party files are kept at the largest resolution the source offered, unmodified.
+The two generated images are original concepts, not native 4K artwork. Bundled third-party files are kept at the largest resolution the source served, unmodified. Some sit below the source's advertised size: ArtStation only exposes 1600 px for the Remember Me piece, and backiee only serves 1920 × 1080. The Behance entry is a multi-image project; the bundled file is its cover image.
 
 ★ Initial favorites were Dystopian Dreams and Starfield: Shattered Space. The star is a preference, not a licensing designation.
-
-## Not yet bundled
-
-These two are protected by bot challenges and could not be fetched automatically. They stay as links.
-
-| Wallpaper | Creator | Source | Rights |
-| --- | --- | --- | --- |
-| Remember Me: Slum Neo-Paris | Paul Chadeisson | [ArtStation](https://www.artstation.com/artwork/zmx6) | Artist copyright |
-| The Museum of Alien Life | Creator unverified | [Behance](https://www.behance.net/gallery/106183577/The-Museum-of-Alien-Life) | Unverified |
 
 ## Use as a Nix flake input
 
@@ -54,6 +47,6 @@ Any file in the table above works the same way. Keep the existing `pkgs.runComma
 
 ## Copyright and attribution
 
-The two generated images carry no license yet. Every other file is third-party artwork redistributed here without permission: Wallpaper Abyss labels several works "Free For Private, Personal Use," which is not a grant to republish them, Bethesda's wallpaper is publisher copyright, and several creators are unverified. Attribution and source links are preserved above.
+The two generated images carry no license yet. Every other file is third-party artwork redistributed here without permission: Wallpaper Abyss labels several works "Free For Private, Personal Use," which is not a grant to republish them, Bethesda's wallpaper is publisher copyright, and several creators are unverified. Attribution and source links are preserved above. ArtStation and Behance were fetched through a real browser session; that changed nothing about the rights.
 
 Treat this repository as private until each work's terms are cleared or the files are replaced with original art. There is no blanket license for the collection.
